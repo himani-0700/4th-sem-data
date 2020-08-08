@@ -1,0 +1,92 @@
+question 1:
+
+with open('words.txt', 'r') as f:
+   k = []
+   for line in f:
+        words = line.split()
+        for i in words:
+            l = len(i)
+            if(l > 20):
+              k.append(i)
+print(k)
+----------------------------------------------------------------------------------------------------------------
+
+question 3:
+
+def is_triangle(x,y,z):
+  if x + y <= z or y + z <= x or x + z <= y:
+    return "no"
+  else :
+    return "yes"    
+def input_sides():
+  print("Enter the sides : ") 
+  a,b,c=[int(n) for n in input().split()]
+  print(is_triangle(a,b,c))
+input_sides()
+
+----------------------------------------------------------------------------------------------------------------
+
+question 4:
+
+def ack(m,n):
+  if m==0:
+     return n+1
+  elif (m>0) and (n==0):
+     return ack(m-1,1)
+  elif (m>0) and (n>0) :
+     return ack(m-1,ack(m,n-1))
+a=int(input("Enter value of m :"))
+b=int(input("Enter value of n :"))     
+print(ack(a,b))
+
+# for higher values of m and n we'll get RecursionError: maximum recursion depth exceeded in comparison
+
+------------------------------------------------------------------------------------------------------------
+
+question 2:
+
+part i:
+
+def do_twice(a):
+  for i in range(2):
+    print(a)
+def print_spam():
+   return "spam"
+do_twice(print_spam()) 
+
+part ii:
+
+def do_twice(a,b):
+  for i in range(b):
+    print(a) 
+def print_spam():
+   return "spam"
+do_twice(print_spam(),7) 
+
+part iii:
+
+def print_twice(a):
+  print(a,a)
+print_twice("spam")
+
+part vi:
+
+def do_twice(a,b):
+  for i in range(b):
+    print(a) 
+def print_twice(a):
+   return a,a
+do_twice(print_twice('spam'),2) 
+
+
+part v:
+
+def do_four(a,b):
+  for i in range(b):
+    print(a)   
+def wish(a):
+   return a
+do_four(wish('Good Morning'),4)
+
+----------------------------------------------------------------------------------------------------------------
+
